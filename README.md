@@ -26,7 +26,28 @@ cd 01-state-management
 terraform init
 terraform plan
 terraform apply
+tf_state_resource_group=$(terraform output -raw resource_group)
 tf_state_storage_account=$(terraform output -raw storage_account)
+```
+
+### 2. Creating infrastructure in Azure
+Folder: 02-base-infrastructure
+
+After initialization of the remote state management this folder contains files to create following resources:
+- ...
+- ...
+- ...
+
+Commands:
+```bash
+cd 02-base-project
+terraform init \
+    -backend-config="resource_group_name=$tf_state_resource_group" \
+    -backend-config="storage_account_name=$tf_state_storage_account" \
+    -backend-config="container_name=tf-state-container" \
+    -backend-config="key=base-project.terraform.tfstate"
+terraform plan
+terraform apply
 ```
 
 ## Todo List
@@ -34,7 +55,7 @@ tf_state_storage_account=$(terraform output -raw storage_account)
   - [x] Resource Group
   - [x] Azure Blob Storage
 - [ ] Folder for Base Infrastructure
-  - [ ] Resource Group
+  - [x] Resource Group
   - [ ] vNET + Subnets
   - [ ] Firewall
 - [ ] Folder for Example App

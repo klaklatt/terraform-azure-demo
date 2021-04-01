@@ -1,7 +1,7 @@
-output "project_id" {
-  value = google_project.terraform_state.project_id
+output "resource_group" {
+  value = azurerm_resource_group.admin_project.name
 }
 
-output "bucket" {
-  value = google_storage_bucket.for_tf_state.name
+output "storage_account" {
+  value = azurerm_storage_account.terraform_state.name
 }

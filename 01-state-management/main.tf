@@ -24,7 +24,7 @@ resource "random_integer" "storage_account" {
 }
 
 resource "azurerm_storage_account" "terraform_state" {
-  name                     = "tf-storage-account-${random_integer.storage_account.id}"
+  name                     = "terraformstate${random_integer.storage_account.id}"
   resource_group_name      = azurerm_resource_group.admin_project.name
   location                 = azurerm_resource_group.admin_project.location
   account_tier             = "Standard"

@@ -50,6 +50,19 @@ terraform plan
 terraform apply
 ```
 
+### 3. Example App
+Commands:
+```bash
+cd 03-example-app
+terraform init \
+    -backend-config="resource_group_name=$tf_state_resource_group" \
+    -backend-config="storage_account_name=$tf_state_storage_account" \
+    -backend-config="container_name=tf-state-container" \
+    -backend-config="key=example-app.terraform.tfstate"
+terraform plan
+terraform apply
+```
+
 ## Todo List
 - [x] Folder for State Management
   - [x] Resource Group

@@ -75,6 +75,8 @@ resource "azurerm_linux_virtual_machine_scale_set" "example_app" {
   }
 
   custom_data = base64encode(local.custom_data)
+
+  health_probe_id = azurerm_lb_probe.example_app.id
 }
 
 resource "azurerm_public_ip" "example_app" {
@@ -82,6 +84,7 @@ resource "azurerm_public_ip" "example_app" {
   location            = var.region
   resource_group_name = var.resource_group
   allocation_method   = "Static"
+  sku = "Standard"
 }
 
 resource "azurerm_lb" "example_app" {
@@ -93,6 +96,8 @@ resource "azurerm_lb" "example_app" {
     name                 = "PublicIPAddress"
     public_ip_address_id = azurerm_public_ip.example_app.id
   }
+
+  sku = "Standard"
 }
 
 resource "azurerm_lb_backend_address_pool" "example_app" {

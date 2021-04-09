@@ -84,7 +84,7 @@ resource "azurerm_public_ip" "example_app" {
   location            = var.region
   resource_group_name = var.resource_group
   allocation_method   = "Static"
-  sku = "Standard"
+  sku                 = "Standard"
 }
 
 resource "azurerm_lb" "example_app" {

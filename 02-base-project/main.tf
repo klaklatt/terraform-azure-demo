@@ -91,7 +91,7 @@ resource "azurerm_network_interface" "bastion" {
     name                          = "bastion-ip-configuration"
     subnet_id                     = azurerm_subnet.public.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id = azurerm_public_ip.bastion.id
+    public_ip_address_id          = azurerm_public_ip.bastion.id
   }
 }
 
@@ -122,7 +122,7 @@ resource "azurerm_virtual_machine" "bastion" {
     disable_password_authentication = true
     ssh_keys {
       key_data = file("~/.ssh/id_rsa.pub")
-      path = "/home/adminuser/.ssh/authorized_keys"
+      path     = "/home/adminuser/.ssh/authorized_keys"
     }
   }
 }

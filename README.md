@@ -35,8 +35,10 @@ Folder: 02-base-infrastructure
 
 After initialization of the remote state management this folder contains files to create following resources:
 - Azure Resource Group
-- ...
-- ...
+- Azure vNET
+- 1 Public and 1 Private Subnet
+- Network Security Groups for the Subnets
+- Bastion Host in public Subnet
 
 Commands:
 ```bash
@@ -51,6 +53,10 @@ terraform apply
 ```
 
 ### 3. Example App
+Folder: 03-example-app
+
+This folder creates a Virtual Machine Scale Set with a basic web application listening on http port 80 and a load balancer.
+
 Commands:
 ```bash
 cd 03-example-app

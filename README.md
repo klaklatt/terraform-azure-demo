@@ -62,15 +62,3 @@ terraform init \
 terraform plan
 terraform apply
 ```
-
-## Todo List
-- [x] Folder for State Management
-  - [x] Resource Group
-  - [x] Azure Blob Storage
-- [ ] Folder for Base Infrastructure
-  - [x] Resource Group
-  - [ ] vNET + Subnets
-  - [ ] Firewall
-- [ ] Folder for Example App
-  - [ ] VMSS
-  - [ ] Loadbalancer

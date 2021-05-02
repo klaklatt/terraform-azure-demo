@@ -1,6 +1,10 @@
 # Terraform Azure Demo
 creating infrastructure with terraform in Microsoft Azure.
 
+## Infrastructure Diagram
+
+![azure-diagram](./assets/terraform-azure-demo.svg)
+
 ## Prerequisites
 
 - Terraform installed on machine
